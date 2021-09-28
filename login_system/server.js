@@ -9,6 +9,8 @@ app.set('view engine', 'ejs');
 
 // load static assets (for CSS)
 app.use('/static',express.static((path.join(__dirname,'public'))))
+// pic
+app.use('/assets',express.static(path.join(__dirname,'public/assets')))
 
 //home route
 app.get('/', (req, res) => {
