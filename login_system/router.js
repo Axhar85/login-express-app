@@ -16,4 +16,15 @@ router.post('/login', (req, res)=>{
         res.end("Invalid Username")
     }
 });
+
+//rout for Dashboard
+router.get('/dashboard', (req, res) => {
+    if(req.session.user){
+        res.render('dashboard', {user:req.session.user})
+    } else {
+        res.send("Unauthersied User")
+    }
+})
+
+
 module.exports=router;
